@@ -8,8 +8,8 @@ def main():
     while True:
         # 制御コードとマップ情報を得る
         control_code, map_info = client.receive()
-        # 制御コードが0の場合ループを抜ける
-        if control_code == 0:
+        # 制御コードが'0'の場合ループを抜ける
+        if control_code == '0':
             break
 
         # 準備ができたらget_ready()を行う
