@@ -42,15 +42,23 @@ class ChaserClient:
             self.connection.send(command + "\r\n")
         except Exception as e:
             print(f"コマンドの送信にエラーが発生しました。：{e}")
+            sys.exit(1)
 
     def _send_name(self):
         try:
             self.connection.send(self.name)
         except Exception as e:
             print(f"チーム名の送信に失敗しました。 :{e}")
+            sys.exit(1)
 
     def receive(self):
-        response = self.connection.recv()
+        try:
+            response = self.connection.recv()
+        except ConnectionResetError as e:
+            print(f"サーバーとの接続が切れました。: {e}")
+            self.connection.close()
+            sys.exit(1)
+
         control_code = response[0]
         if control_code == TURN_START or control_code == GAME_END:
             return control_code, None
