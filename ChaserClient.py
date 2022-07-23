@@ -11,7 +11,7 @@ class ChaserClient:
     def __init__(self, host: str, port: str, name: str) -> None:
 
         if not self._check_ip_addr_format(host):
-            sys._exit(1)
+            sys.exit(1)
 
         self.host = host
         self.port = port
