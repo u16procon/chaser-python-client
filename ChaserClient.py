@@ -42,6 +42,7 @@ class ChaserClient:
             self.connection.send(command + "\r\n")
         except Exception as e:
             print(f"コマンドの送信にエラーが発生しました。：{e}")
+            self.connection.close()
             sys.exit(1)
 
     def _send_name(self):
@@ -49,6 +50,7 @@ class ChaserClient:
             self.connection.send(self.name)
         except Exception as e:
             print(f"チーム名の送信に失敗しました。 :{e}")
+            self.connection.close()
             sys.exit(1)
 
     def receive(self):
