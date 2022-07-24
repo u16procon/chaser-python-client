@@ -22,5 +22,6 @@ def main():
     # ゲームを終了する
     client.close()
 
+
 if __name__ == "__main__":
     main()
