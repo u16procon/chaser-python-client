@@ -1,4 +1,4 @@
-from ChaserSimpleClient import ChaserSimpleClient
+from client.ChaserSimpleClient import ChaserSimpleClient
 
 
 def main():

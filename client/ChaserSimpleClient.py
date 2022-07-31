@@ -1,5 +1,5 @@
 import sys
-from ChaserClient import ChaserClient
+from client.ChaserClient import ChaserClient
 
 TURN_END = '0'
 
