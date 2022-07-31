@@ -56,7 +56,6 @@ class ChaserClient:
     def receive(self):
         try:
             response = self.connection.recv()
-            print(response)
         except ConnectionResetError as e:
             print(f"サーバーとの接続が切れました。: {e}")
             self.connection.close()
