@@ -1,6 +1,6 @@
 import ipaddress
 import sys
-from Connection import Connection
+from utils.Connection import Connection
 
 TURN_START = '@'
 TURN_END = '#'
@@ -56,6 +56,7 @@ class ChaserClient:
     def receive(self):
         try:
             response = self.connection.recv()
+            print(response)
         except ConnectionResetError as e:
             print(f"サーバーとの接続が切れました。: {e}")
             self.connection.close()
