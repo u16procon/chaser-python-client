@@ -4,11 +4,10 @@ from client.ChaserSimpleClient import ChaserSimpleClient
 def main():
     # ChaserSimpleClient("CHaserサーバが動いているマシンのIPアドレス", "CHaserサーバのポート番号", "チームや自身の名前")
     client = ChaserSimpleClient("192.168.xx.x", 2009, "test")
+    # マップ情報を記載する空listを作成
+    map_info = []
 
     while True:
-        # マップ情報を記載する空listを作成
-        map_info = []
-
         # 準備ができたらget_ready()を行う
         map_info = client.get_ready()
 
