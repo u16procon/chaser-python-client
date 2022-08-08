@@ -2,8 +2,8 @@ from client.ChaserClient import ChaserClient
 
 
 def main():
+    # ChaserClient("CHaserサーバが動いているマシンのIPアドレス", "CHaserサーバのポート番号", "チームや自身の名前")
     client = ChaserClient("192.168.xx.x", 2009, "test")
-    client.connect()
 
     while True:
         # 制御コードとマップ情報を得る
